@@ -71,3 +71,8 @@ func (s *IntSet) String() string {
 }
 
 //!-string
+
+// Len returns the number of elements
+func (s *IntSet) Len() int {
+	return len(s.words)
+}
