@@ -9,18 +9,18 @@
 // memoization of a function of type Func.
 package memo
 
-// A Memo caches the results of calling a Func.
-type Memo struct {
-	f     Func
-	cache map[string]result
-}
-
 // Func is the type of the function to memoize.
 type Func func(key string) (interface{}, error)
 
 type result struct {
 	value interface{}
 	err   error
+}
+
+// A Memo caches the results of calling a Func.
+type Memo struct {
+	f     Func
+	cache map[string]result
 }
 
 func New(f Func) *Memo {
